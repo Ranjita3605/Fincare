@@ -10,26 +10,21 @@ import ContactPage from './landing_page/Contact/ContactPage';
 import LoginPage from './landing_page/Login/LoginPage';
 
 
+console.log('index.js executed, PUBLIC_URL=', process.env.PUBLIC_URL);
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-   
-   <React.StrictMode>
-      
-      <Router>
-         <Navbar/>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/features" element={<FeaturePage />} />
-          <Route path="/about" element={<AboutPage />} />
-            <Route path="/contact" element={<ContactPage />} />
-            <Route path="/login" element={<LoginPage />} />
-        </Routes>
-      </Router>
-      
-      
-     
-
-    </React.StrictMode>
+  <React.StrictMode>
+    <Router basename={process.env.PUBLIC_URL || '/'}>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/features" element={<FeaturePage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/contact" element={<ContactPage />} />
+        <Route path="/login" element={<LoginPage />} />
+      </Routes>
+    </Router>
+  </React.StrictMode>
 );
 
 
