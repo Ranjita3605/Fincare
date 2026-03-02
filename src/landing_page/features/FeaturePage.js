@@ -1,6 +1,6 @@
 import React from 'react';
 import Card from './Card';
- // Import your custom CSS
+import './FeaturePage.css';
 
 function FeaturePage() {
   return (

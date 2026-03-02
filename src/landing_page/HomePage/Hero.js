@@ -111,6 +111,14 @@ function Hero() {
         </button>
       </section>
 
+      {/* ===== STATS COUNTER SECTION ===== */}
+      <section className="stats-section">
+        <Stat number={4000} suffix="+" label="Government Schemes" />
+        <Stat number={24} suffix="/7" label="AI Support" />
+        <Stat number={100} suffix="%" label="Free Service" />
+        <Stat number={10} suffix="+" label="Indian Languages" />
+      </section>
+
       {/* Mic Section */}
       <div className="ai-mic" id="aiMic">
         <div className="mic-text">Click here to get started</div>
@@ -141,6 +149,38 @@ function Hero() {
         </div>
       </div>
     </>
+  );
+}
+
+function Stat({ number, suffix, label }) {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    let start = 0;
+    const duration = 2000; // animation duration
+    const increment = number / (duration / 20);
+
+    const counter = setInterval(() => {
+      start += increment;
+      if (start >= number) {
+        setCount(number);
+        clearInterval(counter);
+      } else {
+        setCount(Math.floor(start));
+      }
+    }, 20);
+
+    return () => clearInterval(counter);
+  }, [number]);
+
+  return (
+    <div className="stat-box">
+      <h2>
+        {count}
+        {suffix}
+      </h2>
+      <p>{label}</p>
+    </div>
   );
 }
 
