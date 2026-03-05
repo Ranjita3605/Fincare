@@ -149,6 +149,13 @@ function Hero() {
           </svg>
         </div>
       </div>
+      <div className="chat-box">
+        {messages.map((msg, index) => (
+          <div key={index} className={msg.sender}>
+            <b>{msg.sender === "user" ? "You" : "AI"}:</b> {msg.text}
+          </div>
+        ))}
+      </div>
     </>
   );
 }
