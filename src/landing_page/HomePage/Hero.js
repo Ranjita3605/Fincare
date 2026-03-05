@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import startVoiceBot from "../VoiceBot";
+import startVoiceBot from "/landing_page/HomePage/Voicebot";
 
 function Hero() {
   const totalSlides = 5;
