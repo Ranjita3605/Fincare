@@ -1,6 +1,13 @@
 const speak = (text) => {
   const speech = new SpeechSynthesisUtterance(text);
-  speech.lang = "en-US";
+
+  // Auto detect language from text
+  if (/[\u0C80-\u0CFF]/.test(text)) speech.lang = "kn-IN"; // Kannada
+  else if (/[\u0B80-\u0BFF]/.test(text)) speech.lang = "ta-IN"; // Tamil
+  else if (/[\u0C00-\u0C7F]/.test(text)) speech.lang = "te-IN"; // Telugu
+  else if (/[\u0D00-\u0D7F]/.test(text)) speech.lang = "ml-IN"; // Malayalam
+  else speech.lang = "en-US"; // English
+
   window.speechSynthesis.speak(speech);
 };
 
@@ -14,11 +21,15 @@ const startVoiceBot = () => {
   }
 
   const recognition = new SpeechRecognition();
-  recognition.lang = "en-US";
+
+  // Browser listens in English but understands Indian accents
+  recognition.lang = "en-IN";
+  recognition.continuous = false;
+  recognition.interimResults = false;
+
   recognition.start();
 
-  // Greeting message
-  speak("Hello! How can I help you with finance or government schemes?");
+  speak("Hello! I can help you with finance and government schemes.");
 
   recognition.onresult = async (event) => {
     const userSpeech = event.results[0][0].transcript;
@@ -31,18 +42,19 @@ const startVoiceBot = () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          message: userSpeech,
-          language: "English",
+          message: userSpeech
         }),
       });
 
       const data = await res.json();
+
       console.log("AI:", data.reply);
 
       speak(data.reply);
+
     } catch (err) {
       console.error(err);
-      speak("Sorry, something went wrong.");
+      speak("Sorry something went wrong");
     }
   };
 };
