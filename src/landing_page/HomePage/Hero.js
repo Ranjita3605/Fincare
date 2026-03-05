@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import startVoiceBot from "../VoiceBot";
 
 function Hero() {
   const totalSlides = 5;
@@ -120,7 +121,7 @@ function Hero() {
       </section>
 
       {/* Mic Section */}
-      <div className="ai-mic" id="aiMic">
+      <div className="ai-mic" id="aiMic" onClick={startVoiceBot}>
         <div className="mic-text">Click here to get started</div>
         <div className="ai-ring"></div>
         <div className="ai-core">

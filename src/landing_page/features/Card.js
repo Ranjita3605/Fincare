@@ -29,14 +29,13 @@ function Card({ imageURL, title, description }) {
           {description}
         </p>
 
-        <a
-          href="#"
+        <button
           className="btn"
-          style={{ backgroundColor: "#66bb6a", color: "#ffffff" }}
+          style={{ backgroundColor: "#66bb6a", color: "#ffffff", border: "none", padding: "0.5rem 1rem", cursor: "pointer" }}
           onClick={handleExploreClick}
         >
           Explore
-        </a>
+        </button>
       </div>
     </div>
   );

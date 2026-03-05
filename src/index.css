@@ -296,6 +296,13 @@ img{
     transition:0.35s;
 }
 
+/* size the svg inside the core and make it block-level for centering */
+.ai-core .mic-icon{
+    width:50%;
+    height:50%;
+    display:block;
+}
+
 .ai-core:hover{
     transform:scale(1.12);
 }
