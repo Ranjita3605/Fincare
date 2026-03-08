@@ -1,0 +1,153 @@
+/* body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.loan-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #21ed0e, #63f16f);
+}
+
+.loan-card {
+  background: #ffffff;
+  width: 420px;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.15);
+  transition: 0.3s ease;
+}
+
+.loan-card:hover {
+  transform: translateY(-5px);
+}
+
+.loan-title {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #92442a;
+  font-size: 24px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 18px;
+}
+
+.input-group label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #333;
+  font-size: 14px;
+}
+
+.input-group input {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  background: #f9fafb;
+  font-size: 14px;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: #39bd09;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 12px;
+  background: #2be317;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 10px;
+}
+
+.submit-btn:hover {
+  background: #27d30c;
+} */
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* Main container */
+
+.loan-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #f5df8e, #63f16f);
+}
+
+/* Card */
+
+.loan-card {
+  background: #ffffff;
+  width: 420px;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.15);
+  transition: 0.3s ease;
+}
+
+.loan-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Title */
+
+.loan-title {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #92442a;
+  font-size: 26px;
+}
+
+/* File upload */
+
+.file-upload {
+  width: 100%;
+  margin-bottom: 25px;
+}
+
+/* Input group */
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 18px;
+}
+
+/* Label */
+
+.input-group label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #333;
+  font-size: 14px;
+}
+
+/* Inputs */
+
+.input-group input {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  background: #f9fafb;
+  font-size: 14px;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: #39bd09;
+}
